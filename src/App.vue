@@ -1,15 +1,17 @@
 <template>
-  <div>hi</div>
-  <Su/>
+  <div>导航栏
+    <router-link to="/">Su</router-link>
+    |
+    <router-link to="/su2">Su2</router-link>
+  </div>
+  <hr>
+  <router-view/>
 </template>
 
 <script>
-import Su from './components/Su.vue'
+
 
 export default {
   name: 'App',
-  components: {
-    Su: Su
-  }
 }
 </script>
