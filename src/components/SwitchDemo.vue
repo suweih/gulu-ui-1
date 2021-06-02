@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Switch :value="y" @input="y = $event"/>
+    <Switch v-model:value="bool" />
+<!--<Switch :value="y" @input.value="y = $event" />-->
   </div>
 </template>
 <script>
@@ -10,8 +11,8 @@ import {ref} from "vue"
 export default {
   components: {Switch},
   setup() {
-    const y = ref(false)
-    return{y}
+    const bool = ref(false)
+    return{bool}
   }
 }
 </script>
