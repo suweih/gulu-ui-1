@@ -1,5 +1,13 @@
 <template>
   <div>
-    这里是Button.vue
+    <Button>你好</Button>
   </div>
 </template>
+
+<script>
+import Button from "../lib/Button.vue"
+
+export default {
+  components:{Button}
+}
+</script>
