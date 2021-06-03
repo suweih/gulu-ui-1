@@ -2,13 +2,31 @@
   <h1>Dialog示例</h1>
   <div>
     <h2>示例一</h2>
-    <Dialog></Dialog>
+    <Button @click="toggle">toggle</Button>
+    <Dialog v-model:visible="y" :closeOnClickOverlay="closeOnClickOverlay" :ok="f1" :cancel="f2"></Dialog>
   </div>
 </template>
-<script>
-import Dialog from "../lib/Dialog.vue"
+<script lang="ts">
+import Dialog from '../lib/Dialog.vue';
+import Button from '../lib/Button.vue';
+import {ref} from 'vue';
 
 export default {
-  components: {Dialog}
-}
+  components: {Button, Dialog},
+  setup() {
+    const closeOnClickOverlay = ref(false);
+    const y = ref(false);
+    const toggle = () => {
+      y.value = !y.value;
+    };
+    const f1 = () => {
+      console.log('1');
+      return false;
+    };
+    const f2 = () => {
+      console.log('2');
+    };
+    return {y, toggle, closeOnClickOverlay, f1, f2};
+  }
+};
 </script>
