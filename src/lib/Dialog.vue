@@ -3,7 +3,7 @@
     <template v-if="visible">
       <div class="gulu-dialog-overlay" @click="OnClickOverlay"></div>
       <div class="gulu-dialog-wrapper">
-        <div class="gulu-dialog" >
+        <div class="gulu-dialog">
           <header>
             <slot name="title"/>
             <span class="gulu-dialog-close" @click="close"></span>
@@ -16,7 +16,7 @@
             <Button @click="cancel">Cancel</Button>
           </footer>
         </div>
-        </div>
+      </div>
     </template>
   </teleport>
 </template>
@@ -42,13 +42,13 @@ export default {
   },
   components: {Button},
   setup(props, context) {
+    const close = () => {
+      context.emit('update:visible', false)
+    }
     const OnClickOverlay = () => {
       if (props.closeOnClickOverlay) {
         close()
       }
-    }
-    const close = () => {
-      context.emit('update:visible', false)
     }
     const ok = () => {
       if (props.ok && props.ok() !== false) {
@@ -56,7 +56,7 @@ export default {
       }
     }
     const cancel = () => {
-      context.emit('cancel')
+      props.cancel?.()
       close()
     }
     return {close, OnClickOverlay, ok, cancel}
