@@ -1,22 +1,24 @@
 <template>
-  <template v-if="visible">
-    <div class="gulu-dialog-overlay" @click="OnClickOverlay"></div>
-    <div class="gulu-dialog-wrapper">
-      <div class="gulu-dialog">
-        <header>
-          <slot name="title" />
-          <span class="gulu-dialog-close" @click="close"></span>
-        </header>
-        <main>
-          <slot name="content" />
-        </main>
-        <footer>
-          <Button @click="ok" level="main">OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
-      </div>
-    </div>
-  </template>
+  <teleport to="body">
+    <template v-if="visible">
+      <div class="gulu-dialog-overlay" @click="OnClickOverlay"></div>
+      <div class="gulu-dialog-wrapper">
+        <div class="gulu-dialog" >
+          <header>
+            <slot name="title"/>
+            <span class="gulu-dialog-close" @click="close"></span>
+          </header>
+          <main>
+            <slot name="content"/>
+          </main>
+          <footer>
+            <Button @click="ok" level="main">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
+        </div>
+    </template>
+  </teleport>
 </template>
 <script>
 import Button from "./Button.vue"
