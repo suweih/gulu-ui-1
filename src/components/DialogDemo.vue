@@ -3,7 +3,10 @@
   <div>
     <h2>示例一</h2>
     <Button @click="toggle">toggle</Button>
-    <Dialog v-model:visible="y" :closeOnClickOverlay="closeOnClickOverlay" :ok="f1" :cancel="f2"></Dialog>
+    <Dialog v-model:visible="y" :closeOnClickOverlay="closeOnClickOverlay" :ok="f1" :cancel="f2">
+      <div>111</div>
+      <div>222</div>
+    </Dialog>
   </div>
 </template>
 <script lang="ts">
