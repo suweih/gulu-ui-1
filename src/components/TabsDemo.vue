@@ -11,7 +11,7 @@ import Tabs from '../lib/Tabs.vue';
 import Tab from '../lib/Tab.vue';
 
 export default {
-  components: {Tab, Tabs}
+  components: {Tabs, Tab}
 };
 
 </script>
