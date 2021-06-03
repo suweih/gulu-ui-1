@@ -41,6 +41,7 @@ export default {
     };
     const showDialog = () => {
       openDialog({
+        closeOnClickOverlay:false,
         title: '标题',
         content: '内容',
         ok() {
