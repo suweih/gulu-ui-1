@@ -4,8 +4,13 @@
     <h2>示例一</h2>
     <Button @click="toggle">toggle</Button>
     <Dialog v-model:visible="y" :closeOnClickOverlay="closeOnClickOverlay" :ok="f1" :cancel="f2">
-      <div>111</div>
-      <div>222</div>
+      <template v-slot:title>
+        <strong>标题</strong>
+      </template>
+      <template v-slot:content>
+        <div>111</div>
+        <div>222</div>
+      </template>
     </Dialog>
   </div>
 </template>

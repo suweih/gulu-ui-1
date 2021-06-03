@@ -4,11 +4,11 @@
     <div class="gulu-dialog-wrapper">
       <div class="gulu-dialog">
         <header>
-          {{title}}
+          <slot name="title" />
           <span class="gulu-dialog-close" @click="close"></span>
         </header>
         <main>
-          <slot />
+          <slot name="content" />
         </main>
         <footer>
           <Button @click="ok" level="main">OK</Button>
@@ -36,10 +36,6 @@ export default {
     },
     cancel: {
       type: Function
-    },
-    title:{
-      type:String,
-      default :'提示'
     }
   },
   components: {Button},
