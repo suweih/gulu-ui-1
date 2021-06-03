@@ -30,24 +30,26 @@ export default {
     const selectedItem = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
-    // watchEffect(()=>{
+    onMounted(() => {
+      watchEffect(() => {
+        const {width} = selectedItem.value.getBoundingClientRect();
+        indicator.value.style.width = width + 'px';
+        const {left: left1} = container.value.getBoundingClientRect();
+        const {left: left2} = selectedItem.value.getBoundingClientRect();
+        const left = left2 - left1;
+        indicator.value.style.left = left + 'px';
+      });
+    });
+    // const x = () => {
     //   const {width} = selectedItem.value.getBoundingClientRect();
     //   indicator.value.style.width = width + 'px';
     //   const {left: left1} = container.value.getBoundingClientRect();
     //   const {left: left2} = selectedItem.value.getBoundingClientRect();
     //   const left = left2 - left1;
     //   indicator.value.style.left = left + 'px';
-    // })
-    const x = () => {
-      const {width} = selectedItem.value.getBoundingClientRect();
-      indicator.value.style.width = width + 'px';
-      const {left: left1} = container.value.getBoundingClientRect();
-      const {left: left2} = selectedItem.value.getBoundingClientRect();
-      const left = left2 - left1;
-      indicator.value.style.left = left + 'px';
-    };
-    onMounted(x); //第一次渲染
-    onUpdated(x); //后面几次(钩子)
+    // };
+    // onMounted(x); //第一次渲染
+    // onUpdated(x); //后面几次(钩子)
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
