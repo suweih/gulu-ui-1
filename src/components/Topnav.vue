@@ -3,7 +3,7 @@
     <div class="topnav">
       <router-link to="/" class="logo">
         <svg class="icon">
-          <use xlink:href="#icon-fengche"></use>
+          <use xlink:href="#icon-king"></use>
         </svg>
       </router-link>
       <ul class="menu">
@@ -57,8 +57,8 @@ $color: #007974;
     margin-right: auto;
 
     > svg {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
     }
   }
 

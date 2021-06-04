@@ -4,9 +4,7 @@
 </template>
 
 <script lang="ts">
-import {
-  ref
-} from 'vue'
+import {ref} from 'vue'
 export default {
   props: {
     path: {
@@ -15,7 +13,7 @@ export default {
     }
   },
   setup(props) {
-    const content = ref < string > (null)
+    const content = ref(null)
     import(props.path).then(result => {
       content.value = result.default
     })
