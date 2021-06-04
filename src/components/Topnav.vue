@@ -27,7 +27,6 @@ export default {
 
 <style lang="scss" scoped>
 .topnav {
-  background: pink;
   display: flex;
   padding: 16px;
   position: fixed;
@@ -49,7 +48,7 @@ export default {
     flex-wrap: nowrap;
 
     > li {
-      margin: 0 1em;
+      margin:0 1em;
     }
   }
 
