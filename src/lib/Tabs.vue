@@ -52,7 +52,8 @@ export default {
     // onUpdated(x); //后面几次(钩子)
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
-      if (tag.type !== Tab) {
+      // @ts-ignore
+      if (tag.type.name !== Tab.name) {
         throw new Error('Tabs 子标签名必须是Tab');
       }
     });
