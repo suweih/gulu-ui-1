@@ -2,10 +2,9 @@
   <button class="gulu-switch" @click="toggle" :class="{'gulu-checked':value}">
     <span></span>
   </button>
-  <div>{{ value }}</div>
 </template>
-<script lang="ts">
 
+<script lang="ts">
 export default {
   props: {
     value: Boolean
@@ -65,5 +64,8 @@ $h2: $h - 4px;
       margin-left: -4px;
     }
   }
+}
+.gulu-disabled{
+  cursor: not-allowed;
 }
 </style>

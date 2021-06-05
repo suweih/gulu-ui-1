@@ -10,7 +10,6 @@
     <div class="demo-code" v-if="codeVisible">
       <pre class="language-html" v-html="Prism.highlight(component.__sourceCode, Prism.languages.html, 'html')"/>
     </div>
-
   </div>
 </template>
 

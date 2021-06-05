@@ -8,9 +8,7 @@
 
 <script lang="ts">
 import Switch from '../lib/Switch.vue';
-import {
-  ref
-} from 'vue';
+import {ref} from 'vue';
 
 export default {
   components: {
@@ -18,9 +16,7 @@ export default {
   },
   setup() {
     const bool = ref(false);
-    return {
-      bool
-    };
+    return {bool};
   }
 };
 </script>
