@@ -6,7 +6,7 @@
         <h1>轱辘UI</h1>
         <h2>一个厉害的UI框架</h2>
         <p class="actions">
-          <a href="https://github.com">github</a>
+          <a href="https://github.com/suweih/gulu-ui-1">github</a>
           <router-link to="/doc">开始</router-link>
         </p>
       </div>
@@ -61,12 +61,22 @@ $color: #007974;
 
 .features {
     margin: 64px auto;
-    width: 400px;
+  padding: 0 32px ;
     @media (min-width: 800px) {
       width: 800px;
+      >ul {
+        >li {
+          width: 50%;
+        }
+      }
     }
     @media (min-width: 1200px) {
       width: 1200px;
+      >ul {
+        >li {
+          width: 33.33%;
+        }
+      }
     }
 
 
@@ -75,7 +85,6 @@ $color: #007974;
     flex-wrap: wrap;
 
     > li {
-      width: 400px;
       margin: 16px 0;
       display: grid;
       justify-content: start;
