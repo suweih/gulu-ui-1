@@ -1,5 +1,7 @@
 <template>
-  <button class="gulu-switch" @click="toggle" :class="{'gulu-checked':value}">
+  <button class="gulu-switch"
+          @click="toggle"
+          :class="{'gulu-checked':value}">
     <span></span>
   </button>
 </template>
@@ -65,7 +67,8 @@ $h2: $h - 4px;
     }
   }
 }
-.gulu-disabled{
+
+.gulu-disabled {
   cursor: not-allowed;
 }
 </style>

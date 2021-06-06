@@ -15,7 +15,7 @@ export const openDialog = (options) => {
       return h(
         Dialog,
         {
-          closeOnClickOverlay:false,
+          closeOnClickOverlay: false,
           visible: true,
           'onUpdate:visible': (newVisible) => {
             if (newVisible === false) {
